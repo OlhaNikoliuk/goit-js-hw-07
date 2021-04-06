@@ -15,18 +15,15 @@ li.item. Получится 'В списке 3 категории.'.
 const categoriesList = document.querySelector('#categories');
 const categoriesItems = document.querySelectorAll('.item');
 
-const listDescription = () => {
-  console.log(`В списке ${categoriesItems.length} категории.`)
+function listDescription() {
+  console.log(`В списке ${categoriesItems.length} категории.`);
 
-  for (const item of categoriesItems) {
-
+  categoriesItems.forEach(item => {
     const itemTitle = item.querySelector('h2');
     const itemLength = item.querySelectorAll('li');
 
     console.log(`Категория: ${itemTitle.textContent}\nКоличество элементов: ${itemLength.length}`);
-  }
+  })
+
 }
-
-listDescription(categoriesList);
-
-
+listDescription(categoriesList)
